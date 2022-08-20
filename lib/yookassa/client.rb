@@ -42,7 +42,11 @@ module Yookassa
       body = JSON.parse(response.body.to_s, symbolize_names: true)
       return body if response.status.success?
 
-      Entity::Error.new(**body)
+      Rails.logger.info "---------ERROR---------"
+      e = Entity::Error.new(**body)
+      Rails.logger.debug e.inspect
+      Rails.logger.info "---------ERROR---------"
+      e
     end
   end
 end
