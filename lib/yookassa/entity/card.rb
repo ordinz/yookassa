@@ -17,7 +17,7 @@ module Yookassa
 
       # expiry_month [string, required]
       # Expiration date, month, MM.
-      attribute? :expiry_month, Types::Coercible::Integer
+      attribute? :expiry_month, Types::String
 
       # expiry_year [string, required]
       # Expiration date, year, YYYY.
