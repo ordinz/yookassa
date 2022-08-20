@@ -2,7 +2,7 @@
 
 require_relative "./types"
 require_relative "./amount"
-require_relative "./payment_method"
+require_relative "./payment_methods"
 require_relative "./confirmation"
 require_relative "./recipient"
 require_relative "./cancellation_details"
@@ -44,7 +44,7 @@ module Yookassa
 
       # payment_method [object, optional]
       # Payment method  used for this payment.
-      attribute? :payment_method, PaymentMethod
+      attribute? :payment_method, PaymentMethods
 
       # captured_at [datetime, optional]
       # Time of payment capture, based on UTC and specified in the ISO 8601 format. "2018-07-18T10:51:18.139Z"

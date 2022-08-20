@@ -42,7 +42,10 @@ module Yookassa
       body = JSON.parse(response.body.to_s, symbolize_names: true)
       return body if response.status.success?
 
-      Entity::Error.new(**body)
+
+      e = Entity::Error.new(**body)
+      Rails.logger.error("Yookassa API error: #{e.inspect}")
+      e
     end
   end
 end
